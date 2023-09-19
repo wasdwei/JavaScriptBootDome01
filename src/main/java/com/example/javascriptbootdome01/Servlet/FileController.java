@@ -1,12 +1,20 @@
 package com.example.javascriptbootdome01.Servlet;
 
+
+import org.apache.commons.io.FileUtils;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
 import java.io.File;
+import java.net.URLEncoder;
 import java.util.UUID;
 
 /*
@@ -46,4 +54,42 @@ public class FileController {
         //携带上传状态信息回调到文件上传页面
         return "upload";
     }
+    //向文件下载页面跳转
+    @GetMapping("/toDownload")
+    public String toDownload() {
+        return "download";
+    }
+
+    //文件下载管理
+    @GetMapping("/download")
+    public ResponseEntity<byte[]> fileDownload(String filename) {
+        //指定要下载的文件根路径
+        String dirPath = "D:/File/";
+        //创建该文件对象
+        File file = new File(dirPath + File.separator + filename);
+        //设置响应头
+        HttpHeaders headers = new HttpHeaders();
+        //通知浏览器以下载的方式打开
+        headers.setContentDispositionFormData("attachment", filename);
+        //定义以流的形式下载返回文件数据
+        headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
+        try {
+            return new ResponseEntity<>(FileUtils.readFileToByteArray(file), headers, HttpStatus.OK);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new ResponseEntity<byte[]>(e.getMessage().getBytes(), HttpStatus.EXPECTATION_FAILED);
+        }
+    }
+    private String getFilename(HttpServletRequest request, String filename)
+            throws Exception {
+        String[] IEBrowserKeyWords = {"MSIE", "Trident", "Edge"};
+        String userAgent = request.getHeader("User-Agent");
+        for (String keyWord : IEBrowserKeyWords) {
+            if (userAgent.contains(keyWord)) {
+                return URLEncoder.encode(filename, "UTF-8").replace("+"," ");
+            }}
+        return new String(filename.getBytes("UTF-8"), "ISO-8859-1");
+    }
+
 }
+
