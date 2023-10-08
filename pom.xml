@@ -110,6 +110,13 @@
             <version>2.2.5.RELEASE</version>
         </dependency>
 
+        <!--添加1、引入安全管理依赖spring-boot-starter-security启动器-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+
+
     </dependencies>
 
     <build>
