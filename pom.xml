@@ -116,6 +116,12 @@
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
 
+       <!-- 添加JDBC连接数据库的依赖启动器-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+
 
     </dependencies>
 
