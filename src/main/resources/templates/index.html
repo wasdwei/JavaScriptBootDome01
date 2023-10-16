@@ -6,6 +6,9 @@
 </head>
 <body>
 <h1 align="center">欢迎进入电影网站首页</h1>
+<form th:action="@{/mylogout}" method="post">
+    <input th:type="submit" th:value="注销"/>
+</form>
 <hr/>
 <h3>普通电影</h3>
 <ul>

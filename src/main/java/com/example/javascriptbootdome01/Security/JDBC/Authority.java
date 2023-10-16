@@ -7,9 +7,8 @@ import javax.persistence.Id;
 import java.io.Serializable;
 
 /**
- * @author wql
- * @date 2023/10/10 0010 🐷   16:33
- * @description:
+ * @Name: wql
+ * @Time: 2023-10-10  11:41
  */
 @Entity(name = "t_authority")
 public class Authority implements Serializable {

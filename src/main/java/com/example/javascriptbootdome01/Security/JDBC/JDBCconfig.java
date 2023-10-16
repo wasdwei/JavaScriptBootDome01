@@ -6,9 +6,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import javax.servlet.annotation.WebServlet;
 
 /**
- * @author wql
- * @date 2023/10/10 0010 🐷   16:33
- * @description:
+ * @Name: wql
+ * @Time: 2023-10-10  11:41
  */
 @EnableWebSecurity
 public class JDBCconfig {

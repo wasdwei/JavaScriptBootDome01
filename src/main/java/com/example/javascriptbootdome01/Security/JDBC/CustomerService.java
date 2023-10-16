@@ -10,21 +10,24 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-
 /**
- * @author wql
- * @date 2023/10/10 0010 🐷   16:33
- * @description:
+ * @Name: wql
+ * @Time: 2023-10-10  11:41
  */
 @Service
 public class CustomerService {
+
     @Autowired
     private CustomerRepository customerRepository;
+
     @Autowired
     private AuthorityRepository authorityRepository;
+
     @Autowired
     private RedisTemplate redisTemplate;
 
+
+    //    用户名查询用户
     public Customer getCustomer(String username) {
         Customer customer = null;
         Object o = redisTemplate.opsForValue().get("customer_" + username);

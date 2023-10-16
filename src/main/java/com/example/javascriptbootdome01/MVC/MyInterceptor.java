@@ -31,6 +31,11 @@ public class MyInterceptor implements HandlerInterceptor {
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, @Nullable ModelAndView modelAndView) throws Exception {
         //向request域中存放当前年份用于页面动态展示
         request.setAttribute("currentYear", Calendar.getInstance().get(Calendar.YEAR));
+        request.setAttribute("currentYear", Calendar.getInstance().get(Calendar.YEAR));
+        request.setAttribute("currentMonth", Calendar.getInstance().get(Calendar.MONTH));
+        request.setAttribute("currentDay", Calendar.getInstance().get(Calendar.DAY_OF_MONTH));
+        request.setAttribute("currentHour", Calendar.getInstance().get(Calendar.HOUR_OF_DAY));
+        request.setAttribute("currentMinute", Calendar.getInstance().get(Calendar.MINUTE));
     }
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, @Nullable Exception ex) throws Exception {

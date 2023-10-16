@@ -5,10 +5,10 @@
 //import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 //import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 //
-///**
-// * @Name: wql
-// * @Time: 2023-10-08  11:41
-// */
+/**
+ * @Name: wql
+ * @Time: 2023-10-08  11:41
+ */
 //@EnableWebSecurity
 //public class MemorySecurityConfigurerAdapter extends WebSecurityConfigurerAdapter {
 //    @Override
