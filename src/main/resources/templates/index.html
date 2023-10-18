@@ -1,24 +1,31 @@
-<!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
     <title>影视直播厅</title>
 </head>
 <body>
 <h1 align="center">欢迎进入电影网站首页</h1>
-<form th:action="@{/mylogout}" method="post">
-    <input th:type="submit" th:value="注销"/>
+<form th:action="@{/index2}"method="post">
+    <input th:type="submit" th:value="登录" width="20" height="20"/>
 </form>
 <hr/>
+
 <h3>普通电影</h3>
 <ul>
     <li><a th:href="@{/detail/common/1}">飞驰人生</a></li>
     <li><a th:href="@{/detail/common/2}">夏洛特烦恼</a></li>
 </ul>
-<h3>VIP电影</h3>
-<ul>
-    <li><a th:href="@{/detail/vip/1}">速度与激情</a></li>
-    <li><a th:href="@{/detail/vip/2}">猩球崛起</a></li>
-</ul>
+</div>
+
+<!--<div sec:authorize="hasAnyAuthority('VIP')">-->
+    <h3>VIP电影</h3>
+    <ul>
+        <li><a th:href="@{/detail/vip/1}">速度与激情</a>
+        </li>
+        <li><a th:href="@{/detail/vip/2}">猩球崛起</a></li>
+    </ul>
+
 </body>
 </html>

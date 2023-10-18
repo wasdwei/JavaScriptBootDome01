@@ -1,11 +1,13 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta http-equiv="Content-Type" content="text/html" ; charset="UTF-8">
     <title>影片详情</title>
 </head>
 <body>
-<a th:href="@{/}">返回</a>
+<form th:action="@{/index2}"method="post">
+    <input th:type="submit" th:value="返回" width="20" height="20"/>
+</form>
 <h1>速度与激情</h1>
 <p style="width: 550px">简介：一个是美国外交安全局的忠诚特工、身材魁梧的执法者霍布斯（强森饰），
     一个是前英国军事特工精英、无法无天的恶棍肖（斯坦森饰）。在2015年的《速度与激情7》中首次对峙之后，

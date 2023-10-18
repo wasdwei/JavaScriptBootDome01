@@ -1,11 +1,13 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta http-equiv="Content-Type" content="text/html" ; charset="UTF-8">
     <title>影片详情</title>
 </head>
 <body>
-<a th:href="@{/}">返回</a>
+<form th:action="@{/index2}"method="post">
+    <input th:type="submit" th:value="返回" width="20" height="20"/>
+</form>
 <h1>猩球崛起</h1>
 <p style="width: 550px">简介：十年前，人类为自己的愚蠢付出惨痛代价，凶险致命的猿流感病毒蔓延全球，
     世界毁灭殆尽。而在毗邻旧金山的原始丛林，凯撒带领猩猩伙伴们建立起无忧无虑的王国，直到某一天，猩猩的家园的宁静再度被人类打破。

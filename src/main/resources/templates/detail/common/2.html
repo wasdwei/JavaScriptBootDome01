@@ -1,11 +1,13 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta http-equiv="Content-Type" content="text/html" ; charset="UTF-8">
     <title>影片详情</title>
 </head>
 <body>
-<a th:href="@{/}">返回</a>
+<form th:action="@{/index2}"method="post">
+    <input th:type="submit" th:value="返回" width="20" height="20"/>
+</form>
 <h1>夏洛特烦恼</h1>
 <p style="width: 550px">简介：昔日校花秋雅（王智 饰）的婚礼正在隆重举行，
     学生时代暗恋秋雅的夏洛（沈腾 饰）看着周围事业成功的老同学，心中泛起酸味，
@@ -17,5 +19,6 @@
     梦里他重回校园，追求到他心爱的女孩、让失望的母亲重展笑颜、甚至成为无所不能的流行乐坛巨星…… 醉生梦死中，
     他发现身边人都在利用自己，只有马冬梅是最值得珍惜的……
 </p>
+
 </body>
 </html>
