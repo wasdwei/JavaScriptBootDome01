@@ -22,7 +22,7 @@
     </form>
 </div>
 <hr/>
-<!--<div sec:authorize="hasRole('普通用户')">-->
+<div sec:authorize="hasRole('common')">
     <h3>普通电影</h3>
     <ul>
         <li><a th:href="@{/detail/common/1}">飞驰人生</a></li>
@@ -30,7 +30,7 @@
     </ul>
 </div>
 
-<!--<div sec:authorize="hasAnyAuthority('VIP')">-->
+<div sec:authorize="hasAnyAuthority('ROLE_vip')">
     <h3>VIP电影</h3>
     <ul>
         <li><a th:href="@{/detail/vip/1}">速度与激情</a>
